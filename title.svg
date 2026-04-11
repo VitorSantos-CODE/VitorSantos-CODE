@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="80" viewBox="0 0 500 80">
+  <defs>
+    <!-- Glow and Gradient matching the dice -->
+    <linearGradient id="energia_text" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C259FF"/>
+      <stop offset="100%" stop-color="#7A00E6"/>
+    </linearGradient>
+    <filter id="glow_text" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .text-title {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 800;
+      font-size: 40px;
+      fill: url(#energia_text);
+      filter: url(#glow_text);
+    }
+    .typing-container {
+      clip-path: inset(0 100% 0 0);
+      /* types in 2.5s, wait total 4s */
+      animation: type 4s steps(14, end) infinite;
+    }
+    @keyframes type {
+      0% { clip-path: inset(0 100% 0 0); }
+      60% { clip-path: inset(0 0 0 0); }
+      100% { clip-path: inset(0 0 0 0); }
+    }
+  </style>
+
+  <!-- Container matches the typing effect timing -->
+  <g class="typing-container">
+    <text class="text-title" x="70" y="55">Roda um D20 aí</text>
+  </g>
+</svg>
